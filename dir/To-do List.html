@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="To-do App" content="Use the to-do app to compile lists!">
+			<title>To-do App</title>
+			<link href='style.css' rel='stylesheet'>
+		</head>
+
+		<body>
+			<h1 class="title">Do Work!</h1>
+
+            <div class="all-tasks">
+                <h2 class="task-list-title">My Lists</h2>
+                <ul class="task-list">
+                    <li class="active-list">Item 1</li>
+                    <li class="list-name">Item 2</li>
+                    <li class="list-name">Item 3</li>
+                </ul>
+
+                <form action="">
+                    <input
+                        type="text"
+                        class="new list"
+                        placeholder="new list name"
+                        aria-label="new list name"
+                    />
+                    <button class="btn create" aria-label="create new list">+</button>
+                </form>
+            </div>
+
+            <div class="todo-list">
+                <div class="todo-header">
+                    <h2 class="list-title">Item 1</h2>
+                    <p class="task-count">
+                        3 tasks remaining
+                    </p>
+                </div>
+                <div class="todo-body">
+                    <div class="tasks">
+                        <!--Task 1-->
+                        <div class="task">
+                            <input type="checkbox" id="task-1">
+                            <label for="task-1">
+                                <span class="custom-checkbox"></span>
+                                Task 1
+                            </label>
+                        </div>
+                        <!--Task 2-->
+                        <div class="task">
+                            <input type="checkbox" id="task-2">
+                            <label for="task-2">
+                                <span class="custom-checkbox"></span>
+                                Task 2
+                            </label>
+                        </div>
+                        <!--Task 3-->
+                        <div class="task">
+                            <input type="checkbox" id="task-3">
+                            <label for="task-3">
+                                <span class="custom-checkbox"></span>
+                                Task 3
+                            </label>
+                        </div>
+                    </div>
+                    <div class="new-task-creator">
+                        <form action="">
+                            <input
+                                type="text"
+                                class="new task"
+                                placeholder="new task name"
+                                aria-label="new task name"
+                            />
+                            <button class="btn create" aria-label="enter new task">+</button>
+                        </form>
+                    </div>
+                    <div class="delete-stuff">
+                        <button class="btn delete">Clear Completed Tasks</button>
+                        <button class="btn delete">Delete Lists</button>
+                    </div>
+                </div>
+            </div>
+		</body>
+	</html>
