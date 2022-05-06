@@ -1,13 +1,36 @@
 const listsContainer = document.querySelector('[data-lists]')   
+const newListForm = document.querySelector('[data-new-list-form]')
+const newListInput = document.querySelector('[data-new-list-input]')
 
-let lists = ['Task List 1', 'Task List 2']
+let lists = [{
+    id: 1,
+    name: 'Task List 1'
+}, {
+    id: 2,
+    name: 'Task List 2'
+}]
+
+newListForm.addEventListener('submit', e => {
+    e.preventDefault()
+    const listName = newListInput.value
+    if (listName == null || listName === '') return
+    const list = createList(listName)
+    newListInput.value = null
+    lists.push(list)
+    render()
+})
+
+function createList(name){
+    return {id: Date.now().toString(), name: name, tasks: []}
+}
 
 function render() {
     clearElement(listsContainer)
     lists.forEach(list =>{
         const listElement = document.createElement('li')
+        listElement.dataset.listId = list.id
         listElement.classList.add("inactive-list-item")
-        listElement.innerText = list
+        listElement.innerText = list.name
         listsContainer.appendChild(listElement)
     })
 }
