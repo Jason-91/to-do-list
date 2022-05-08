@@ -3,7 +3,9 @@ const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')
 
 const local_storage_list_key = 'task.lists'
+const local_storage_selected_list_id_key ='task.selectedListId'
 let lists = JSON.parse(localStorage.getItem(local_storage_list_key)) || []
+letselectedListId = localStorage.getItem(local_storage_selected_list_id_key)
 
 newListForm.addEventListener('submit', e => {
     e.preventDefault()
@@ -35,6 +37,9 @@ function render() {
         listElement.dataset.listId = list.id
         listElement.classList.add("inactive-list-item")
         listElement.innerText = list.name
+        if (list.id === selectedListId) {
+            listElement.classList.add('active-list')
+        }
         listsContainer.appendChild(listElement)
     })
 }
